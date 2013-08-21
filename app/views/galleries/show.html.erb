@@ -1,15 +1,21 @@
-<p id="notice"><%= notice %></p>
+<% title @gallery.title %>
+
+<div id="photos">
+  <% @gallery.photos.each do |photo| %>
+    <div class="photo">
+      <%= image_tag photo.image.to_s %>
+      <div class="name"><%= photo.title %></div>
+      <div class="actions">
+        <%= link_to "edit", edit_photo_path(photo) %> |
+        <%= link_to "remove", photo, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
 
 <p>
-  <b>Title:</b>
-  <%= @gallery.title %>
+  <%= link_to "Add a Photo", new_photo_path(:gallery_id => @gallery) %> |
+  <%= link_to "Remove Gallery", @gallery, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View Galleries", galleries_path %>
 </p>
-
-<p>
-  <b>Description:</b>
-  <%= @gallery.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
-<%= link_to 'Back', galleries_path %>

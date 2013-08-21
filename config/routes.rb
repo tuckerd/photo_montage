@@ -1,9 +1,8 @@
 PhotoMontage::Application.routes.draw do
   root to: "galleries#index"
   
-  resources :galleries do
-    resources :photos
-  end
+  resources :galleries
+  resources :photos
 
 
   # The priority is based upon order of creation:

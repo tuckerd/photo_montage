@@ -1,6 +1,8 @@
-<h1>Editing gallery</h1>
+<% title "Edit Gallery" %>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @gallery %> |
-<%= link_to 'Back', galleries_path %>
+<p>
+  <%= link_to "Show", @gallery %> |
+  <%= link_to "View All", galleries_path %>
+</p>
