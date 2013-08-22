@@ -3,7 +3,7 @@
 <div id="photos">
   <% @gallery.photos.each do |photo| %>
     <div class="photo">
-      <%= image_tag photo.image.to_s, class: "image image_placeholder" %>
+      <%= image_tag photo.image.url(:thumb), class: "image image_placeholder" %>
       <div class="name"><%= photo.title %></div>
       <div class="actions">
         <%= link_to "edit", edit_photo_path(photo) %> |

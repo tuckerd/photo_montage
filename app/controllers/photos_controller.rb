@@ -41,6 +41,7 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id])
+    @photo.remove_image!
     @photo.destroy
     flash[:notice] = "Photo has been removed."
     redirect_to @photo.gallery
