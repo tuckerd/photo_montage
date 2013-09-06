@@ -1,5 +1,4 @@
 # encoding: utf-8
-require 'carrierwave/processing/mime_types'
 
 class ImageUploader < CarrierWave::Uploader::Base
 
@@ -9,7 +8,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-  #storage :fog
+   storage :fog
 
   include CarrierWave::MimeTypes
   process :set_content_type
@@ -17,8 +16,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    # if AWS
-    #""
      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 

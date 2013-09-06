@@ -3,4 +3,5 @@ class Photo < ActiveRecord::Base
   attr_accessible :title, :gallery_id, :image
 
   mount_uploader :image, ImageUploader
+  #process_in_background :image
 end

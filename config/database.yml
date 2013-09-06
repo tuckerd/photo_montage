@@ -41,13 +41,9 @@ test:
   encoding: unicode
   database: photo_montage_test
   pool: 5
-  username: photo_montage
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
   database: photo_montage_production
   pool: 5
-  username: photo_montage
-  password:
